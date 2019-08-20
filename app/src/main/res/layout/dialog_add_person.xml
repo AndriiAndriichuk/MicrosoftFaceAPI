@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content">
+    <EditText
+        android:textColor="@color/text_color"
+        android:textColorHint="@color/text_color"
+        android:id="@+id/editPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"/>
+    <Button
+        android:textColor="@color/text_color"
+        android:layout_gravity="center"
+        android:id="@+id/btnAddPerson"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="3dp"
+        android:layout_marginTop="5dp"
+        android:text="Add Person" />
+</LinearLayout>
