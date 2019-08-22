@@ -7,6 +7,15 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+    <SurfaceView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:id="@+id/surface"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -28,33 +37,11 @@
             android:layout_height="wrap_content"
             android:id="@+id/btnTakePhoto"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/linearBottom"
+            app:layout_constraintStart_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
-            app:layout_constraintBottom_toTopOf="@+id/linearBottom" android:layout_marginBottom="20dp"/>
-
-
-    <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/linearBottom"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnTakePhoto" android:layout_marginBottom="20dp">
-        <Button
-                android:text="@string/identify"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/btnIdentify"
-                android:layout_weight="1"/>
-        <Button
-                android:text="@string/add_person"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/btnAddPerson"
-                android:layout_weight="1"/>
-    </LinearLayout>
+            android:layout_marginBottom="20dp"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
