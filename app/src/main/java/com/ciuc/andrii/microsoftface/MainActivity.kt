@@ -60,8 +60,6 @@ class MainActivity : AppCompatActivity() {
 
         cameraHidden = CameraHidden(sView = surface)
 
-        btnTakePhoto.performClick()
-
         cameraHidden.liveData.observe(this, androidx.lifecycle.Observer {
             if (it != null) {
 
@@ -322,6 +320,20 @@ class MainActivity : AppCompatActivity() {
             mDialog.dismiss()
             val options: BitmapFactory.Options = BitmapFactory.Options()
             options.inPreferredConfig = Bitmap.Config.ARGB_8888
+
+            GlobalScope.launch {
+                val outputStream = ByteArrayOutputStream()
+                currentBitmap?.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
+                val targetStream = ByteArrayInputStream(outputStream.toByteArray())
+
+                faceServiceClient.addPersonFace(
+                    personGroupId, person.personId, targetStream,
+                    null,
+                    null
+                )
+
+            }
+
             imageView.setImageBitmap(
                 currentBitmap?.let {
                     drawFaceRectangleOnBitmap(

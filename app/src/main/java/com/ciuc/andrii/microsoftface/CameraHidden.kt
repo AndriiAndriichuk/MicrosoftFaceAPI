@@ -40,6 +40,8 @@ class CameraHidden(private var sView: SurfaceView) {
             val sdf = SimpleDateFormat("yyyyMMdd_HHmmss")
             val tar = sdf.format(cal.time)
 
+            photoPath = "$photoFile$tar.jpg"
+
             outStream = FileOutputStream(photoPath)
             outStream.write(data)
             outStream.close()
